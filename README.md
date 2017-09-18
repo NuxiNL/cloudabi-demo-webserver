@@ -6,7 +6,7 @@ making use of [Flower](https://github.com/NuxiNL/flower) for networking.
 
 ## Building
 
-```sh
+```bash
 mkdir build
 cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/Toolchain-x86_64-cloudabi.cmake ..
@@ -15,7 +15,7 @@ make
 
 ## Running
 
-```sh
+```bash
 flower_switchboard /tmp/switchboard &
 cloudabi-run cloudabi-demo-webserver << EOF &
 %TAG ! tag:nuxi.nl,2015:cloudabi/
