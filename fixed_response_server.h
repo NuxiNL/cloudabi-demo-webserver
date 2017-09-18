@@ -13,10 +13,12 @@
 
 #include <flower/protocol/server.ad.h>
 
+class Logger;
+
 class FixedResponseServer : public flower::protocol::server::Server::Service {
  public:
-  explicit FixedResponseServer(std::string_view html_response)
-      : html_response_(html_response) {
+  FixedResponseServer(std::string_view html_response, Logger* logger)
+      : html_response_(html_response), logger_(logger) {
   }
 
   arpc::Status Connect(
@@ -26,6 +28,7 @@ class FixedResponseServer : public flower::protocol::server::Server::Service {
 
  private:
   const std::string html_response_;
+  Logger* const logger_;
 };
 
 #endif

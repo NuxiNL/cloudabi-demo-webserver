@@ -14,6 +14,7 @@
 #include <flower/protocol/server.ad.h>
 
 #include "fixed_response_server.h"
+#include "logger.h"
 
 using arpc::ServerContext;
 using arpc::Status;
@@ -23,6 +24,8 @@ using flower::protocol::server::ConnectResponse;
 Status FixedResponseServer::Connect(ServerContext* context,
                                     const ConnectRequest* request,
                                     ConnectResponse* response) {
+  logger_->Log() << "Received a connection!";
+
   // Process the request asynchronously.
   std::thread([ this, connection{request->client()} ]() {
     // Write a fixed HTTP response.
