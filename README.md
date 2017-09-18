@@ -30,4 +30,5 @@ logger_output: !fd stdout
 html_response: <marquee>It works!</marquee>
 EOF
 sudo flower_ingress_accept 0.0.0.0:80 /tmp/switchboard '{"prog": "webserver"}' &
+curl http://localhost/
 ```
