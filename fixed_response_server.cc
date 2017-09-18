@@ -30,7 +30,7 @@ Status FixedResponseServer::Connect(ServerContext* context,
             "HTTP/1.1 200 OK\r\n"
             "Connection: close\r\n"
             "Content-Length: %zu\r\n"
-            "Content-Type: text/html; charset=utf-8\r\n\r\b",
+            "Content-Type: text/html; charset=utf-8\r\n\r\n",
             html_response_.size());
     write(connection->get(), html_response_.data(), html_response_.size());
 
