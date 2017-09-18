@@ -1,0 +1,14 @@
+// Copyright (c) 2017 Nuxi, https://nuxi.nl/
+//
+// This file is distributed under a 2-clause BSD license.
+// See the LICENSE file for details.
+
+syntax = 'proto3';
+
+package webserver;
+
+message Configuration {
+  fd http_switchboard = 1;
+  fd logger_output = 2;
+  string html_response = 3;
+}
