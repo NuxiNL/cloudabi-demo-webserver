@@ -42,7 +42,6 @@ Status FixedResponseServer::Connect(ServerContext* context,
     char discard[4096];
     while (read(connection->get(), discard, sizeof(discard)) > 0) {
     }
-    close(connection->get());
   })
       .detach();
   return Status::OK;
